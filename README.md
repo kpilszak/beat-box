@@ -1,5 +1,3 @@
-# beat-box
-Multi-player music machine
 <h1 align="right">Beat Box</h1><br>
 
 ## Table of contents
