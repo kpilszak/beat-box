@@ -49,7 +49,7 @@ public class MusicServer {
     }
 
 
-    
+
     public void go() {
         clientOutputStreams = new ArrayList<ObjectOutputStream>();
 

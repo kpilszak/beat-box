@@ -86,7 +86,7 @@ public class BeatBox {
         downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
-        JButton sendIt = new JButton("sendIt");
+        JButton sendIt = new JButton("Send");
         sendIt.addActionListener(new MySendListener());
         buttonBox.add(sendIt);
 
@@ -148,7 +148,7 @@ public class BeatBox {
             trackList = new ArrayList<Integer>();
 
             for (int j = 0; j < 16; j++) {
-                JCheckBox jc = (JCheckBox) checkBoxList.get( + (16 * i));
+                JCheckBox jc = (JCheckBox) checkBoxList.get(j + (16 * i));
                 if (jc.isSelected()) {
                     int key = instruments[i];
                     trackList.add(new Integer(key));
@@ -226,7 +226,7 @@ public class BeatBox {
         }
     }
 
-    public class MyListeSelectionListener implements ListSelectionListener {
+    public class MyListSelectionListener implements ListSelectionListener {
 
         @Override
         public void valueChanged(ListSelectionEvent e) {
@@ -304,8 +304,9 @@ public class BeatBox {
             a.setMessage(comd, chan, one, two);
             event = new MidiEvent(a, tick);
         } catch (Exception e) {
-            return event;
+            e.printStackTrace();
         }
+        return event;
     }
 
 }
